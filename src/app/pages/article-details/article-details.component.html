@@ -1,0 +1,10 @@
+<div class="uk-card uk-card-default uk-width-auto uk-margin">
+    <div class="uk-card-body">
+        <article class="uk-article">
+            <h1 class="uk-article-title"><a class="uk-link-reset">{{this.article?.title}}</a></h1>
+            <p class="uk-article-meta">Written by <a routerLink="/authors/{{this.article?.authors}}">{{this.article?.authors}}</a>, post id : {{this.article?.id}}</p>
+            <p>{{this.article?.content}}</p>
+        </article>
+    </div>
+</div>
+<br>

@@ -1,0 +1,10 @@
+.article{
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+}
+.article-author{
+    font-style: italic;
+}

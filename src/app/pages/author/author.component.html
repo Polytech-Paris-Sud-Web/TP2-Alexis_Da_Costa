@@ -1,0 +1,23 @@
+<h1 class="uk-title uk-padding">Author</h1>
+<div class="uk-card uk-card-default uk-width-1-2@m">
+    <div class="uk-card-body">
+        <article class="uk-comment">
+            <header class="uk-comment-header">
+                <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-comment-avatar" src="../../assets/avatar.png" width="80" height="80" alt="">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset">{{this.author?.name}}</a></h4>
+                        <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                            <li><a href="#">id : {{this.author?.id}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="uk-comment-body">
+                <p>{{this.author?.bio}}</p>
+            </div>
+        </article>
+    </div>
+</div>

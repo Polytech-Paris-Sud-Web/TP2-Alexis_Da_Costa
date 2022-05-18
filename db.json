@@ -1,0 +1,41 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "My First Article",
+      "content": "Hello World",
+      "authors": "Orangefire"
+    },
+    {
+      "id": 3,
+      "title": "Angular service",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec turpis sed sem placerat ullamcorper ac sed eros. Vestibulum euismod vel lacus eget condimentum. Ut rhoncus, risus ut lacinia porttitor, justo lorem tincidunt orci, sit amet elementum sapien magna imperdiet nisi. Proin dictum est sit amet sodales porttitor. Curabitur volutpat ipsum faucibus vestibulum lacinia. Nulla quam nisi, pharetra pellentesque condimentum vitae, pellentesque ac magna. Cras leo ex, vestibulum vitae tortor non, finibus pretium metus.",
+      "authors": "Orangefire"
+    },
+    {
+      "title": "Fake Title",
+      "content": "fds",
+      "authors": "fds",
+      "id": 4
+    },
+    {
+      "title": "Tests",
+      "content": "Tests",
+      "authors": "tests",
+      "id": 5
+    },
+    {
+      "title": "a",
+      "content": "a",
+      "authors": "a",
+      "id": 6
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Orangefire",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec turpis sed sem placerat ullamcorper ac sed eros. Vestibulum euismod vel lacus eget condimentum. Ut rhoncus, risus ut lacinia porttitor, justo lorem tincidunt orci, sit amet elementum sapien magna imperdiet nisi. Proin dictum est sit amet sodales porttitor. Curabitur volutpat ipsum faucibus vestibulum lacinia. Nulla quam nisi, pharetra pellentesque condimentum vitae, pellentesque ac magna. Cras leo ex, vestibulum vitae tortor non, finibus pretium metus."
+    }
+  ]
+}
