@@ -7,20 +7,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ArticleService {
+  private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
+  // private apiUrl = "http://localhost:3000";
 
   constructor(private http : HttpClient) {
   } 
 
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles");
+    return this.http.get<Article[]>(this.apiUrl + "/articles");
   }
 
   public deleteArticle(id: number): void {
-    fetch("http://localhost:3000/articles/" + id, { method: 'DELETE' });
+    fetch(this.apiUrl + "/articles/" + id, { method: 'DELETE' });
   }
 
   public createArticle(article: Omit<Article, "id">): void {
-    this.http.post<Article>("http://localhost:3000/articles", article).subscribe(
+    this.http.post<Article>(this.apiUrl + "/articles", article).subscribe(
       (data) => {
         console.log(data);
       }
@@ -29,6 +31,6 @@ export class ArticleService {
   }
 
   public getArticle(id: number): Observable<Article> {
-    return this.http.get<Article>("http://localhost:3000/articles/" + id);
+    return this.http.get<Article>(this.apiUrl + "/articles/" + id);
   }
 }
