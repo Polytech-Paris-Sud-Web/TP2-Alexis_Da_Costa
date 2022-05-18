@@ -22,7 +22,10 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.articleService.getArticles().subscribe((data) => {
-      this.articles = data.reverse().slice(0, 10);
+      // filter data by id descending
+      this.articles = data.sort((a, b) => {
+        return b.id - a.id;
+      }).slice(0, 10);
     });
   }
 
@@ -32,7 +35,9 @@ export class ArticlesComponent implements OnInit {
     if(toDelete){
       this.articleService.deleteArticle(article.id);
       this.articleService.getArticles().subscribe((data) => {
-        this.articles = data.slice(0, 10);
+        this.articles = data.sort((a, b) => {
+          return b.id - a.id;
+        }).slice(0, 10);
       });
     }
   }
@@ -50,7 +55,9 @@ export class ArticlesComponent implements OnInit {
   clearSearch(): void {
     this.searchForm.reset();
     this.articleService.getArticles().subscribe((data) => {
-      this.articles = data.slice(0, 10);
+      this.articles = data.sort((a, b) => {
+        return b.id - a.id;
+      }).slice(0, 10);
     });
   }
 }

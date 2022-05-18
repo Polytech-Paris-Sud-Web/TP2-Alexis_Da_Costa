@@ -14,16 +14,19 @@ export class ArticleComponent implements OnInit {
   @Output() 
   deleteRequest = new EventEmitter<Article>();
 
-  constructor(route: ActivatedRoute, private articleService: ArticleService, private router: Router){
+  constructor(private route: ActivatedRoute, private articleService: ArticleService, private router: Router){
     this.article = undefined;
-    route.params.subscribe((params) => {
-      this.articleService.getArticle(params["id"]).subscribe((data) => {
-        this.article = data;
-      });
-    });
+    
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      if (params["id"] !== undefined){
+        this.articleService.getArticle(params["id"]).subscribe((data) => {
+          this.article = data;
+        });
+      }
+    });
   }
 
   delete() {
