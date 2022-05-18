@@ -1,8 +1,11 @@
 <div class="uk-margin uk-padding-left" style="position: relative; left: 10px;">
     <form [formGroup]="searchForm" (ngSubmit)="filterBySearch()">
-        <input class="uk-input uk-form-width-small" type="text" placeholder="Input" formControlName="search">
-        <button class="uk-button uk-button-default">Search</button>
-        <button class="uk-button uk-button-default" (click)="clearSearch()">Clear</button>
+        <span class="uk-text-lead">Last 10 articles</span> 
+        <div class="uk-margin">
+            <input class="uk-input uk-form-width-small" type="text" placeholder="Input" formControlName="search">
+            <button class="uk-button uk-button-default">Search</button>
+            <button class="uk-button uk-button-default" (click)="clearSearch()">Clear</button>
+        </div>
     </form>
     <br>
 </div>

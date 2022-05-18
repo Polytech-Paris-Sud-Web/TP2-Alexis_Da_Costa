@@ -16,9 +16,11 @@ export class AuthorComponent implements OnInit {
       this.authorService.getAuthors().subscribe((data) => {
         let authorFind = data.find((author) => author.name == params["name"]);
         if(!authorFind){
-          alert("Author not found in database");
-          this.author = undefined
-          this.router.navigate(['/']);
+          this.author = {
+            name: params["name"],
+            bio: "Author not found in database, so the bio is unvailable. Please create this user.",
+            id: -1
+          }
         }
         else{
           this.author = authorFind
