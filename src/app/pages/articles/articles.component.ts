@@ -22,7 +22,6 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.articleService.getArticles().subscribe((data) => {
-      // Get the 10 most recent articles 
       this.articles = data.reverse().slice(0, 10);
     });
   }
