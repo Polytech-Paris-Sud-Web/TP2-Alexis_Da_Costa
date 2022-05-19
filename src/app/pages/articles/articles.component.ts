@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ArticleService } from '../../article.service';
 import { Article } from '../article/article.component';
@@ -10,22 +11,23 @@ import { Article } from '../article/article.component';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
+  sliced : boolean = false;
   articles: Article[] | null;
   searchForm : FormGroup;
 
-  constructor(private fb: FormBuilder, private articleService: ArticleService) {
+  constructor(private fb: FormBuilder, private articleService: ArticleService, private router: Router) {
     this.articles = null;
     this.searchForm = this.fb.group({
       search: ['', Validators.required ]
     })
+    if(router.url == "/"){
+      this.sliced = true;
+    }
   }
 
   ngOnInit(): void {
     this.articleService.getArticles().subscribe((data) => {
-      // filter data by id descending
-      this.articles = data.sort((a, b) => {
-        return b.id - a.id;
-      }).slice(0, 10);
+      this.articles = this.sliced ? data.slice(0, 10) : data;
     });
   }
 
@@ -35,9 +37,7 @@ export class ArticlesComponent implements OnInit {
     if(toDelete){
       this.articleService.deleteArticle(article.id);
       this.articleService.getArticles().subscribe((data) => {
-        this.articles = data.sort((a, b) => {
-          return b.id - a.id;
-        }).slice(0, 10);
+        this.articles = this.sliced ? data.slice(0, 10) : data;
       });
     }
   }
@@ -55,9 +55,7 @@ export class ArticlesComponent implements OnInit {
   clearSearch(): void {
     this.searchForm.reset();
     this.articleService.getArticles().subscribe((data) => {
-      this.articles = data.sort((a, b) => {
-        return b.id - a.id;
-      }).slice(0, 10);
+      this.articles = this.sliced ? data.slice(0, 10) : data;
     });
   }
 }

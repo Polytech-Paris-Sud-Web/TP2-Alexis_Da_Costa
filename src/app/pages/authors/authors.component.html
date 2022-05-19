@@ -1,0 +1,15 @@
+<span class="uk-text-lead" style="position: relative; left: 10px;">All authors</span> 
+<div uk-grid>
+    <div class="uk-card uk-card-default" *ngFor="let author of this.authors">
+        <div class="uk-card-body">
+            Name : {{author.name}}
+            <br>
+            Id : {{author.id}}
+            <br>
+            Bio : {{author.bio?.slice(0, 50)}}...
+        </div>
+        <div class="uk-card-footer">
+            <a routerLink="{{author.name}}">Read more</a>
+        </div>
+    </div>
+</div>

@@ -20,13 +20,13 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      if (params["id"] !== undefined){
-        this.articleService.getArticle(params["id"]).subscribe((data) => {
-          this.article = data;
-        });
-      }
-    });
+    // this.route.params.subscribe((params) => {
+    //   if (params["id"] !== undefined){
+    //     this.articleService.getArticle(params["id"]).subscribe((data) => {
+    //       this.article = data;
+    //     });
+    //   }
+    // });
   }
 
   delete() {

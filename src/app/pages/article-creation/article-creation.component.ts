@@ -27,6 +27,7 @@ export class ArticleCreationComponent implements OnInit {
       authors,
     }
     this.articleService.createArticle(newArticle);
+    this.articleService.preload().subscribe();
     this.router.navigate(['/']);
   }
 

@@ -13,11 +13,22 @@ import { AuthorComponent } from './pages/author/author.component';
 import { ArticleDetailsComponent } from './pages/article-details/article-details.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AuthorsComponent } from './pages/authors/authors.component';
+import { AuthorService } from './author.service';
 
 const appRoutes: Routes = [
-  { path: 'create', component: ArticleCreationComponent },
-  { path: 'articles', component: ArticlesComponent },
-  { path: '', component: ArticlesComponent },
+  { 
+    path: 'create', 
+    component: ArticleCreationComponent 
+  },
+  { 
+    path: 'articles', 
+    component: ArticlesComponent,
+  },
+  { 
+    path: '', 
+    component: ArticlesComponent
+  },
   {
     path: "articles/:id",
     component: ArticleDetailsComponent
@@ -25,6 +36,10 @@ const appRoutes: Routes = [
   {
     path: "authors/:name",
     component: AuthorComponent
+  },
+  {
+    path: "authors",
+    component: AuthorsComponent
   }
 ]
 
@@ -36,14 +51,15 @@ const appRoutes: Routes = [
     ArticleCreationComponent,
     NavbarComponent,
     AuthorComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    AuthorsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } 
+      { enableTracing: false } 
     ),
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -53,7 +69,7 @@ const appRoutes: Routes = [
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [ArticleService],
+  providers: [ArticleService, AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
-<div class="uk-margin uk-padding-left" style="position: relative; left: 10px;">
+<div class="uk-margin uk-padding-left">
     <form [formGroup]="searchForm" (ngSubmit)="filterBySearch()">
-        <span class="uk-text-lead">Last 10 articles</span> 
+        <span class="uk-text-lead" style="position: relative; left: 10px;">{{this.sliced ? "Last 10 articles" : "All articles"}}</span> 
         <div class="uk-margin">
-            <input class="uk-input uk-form-width-small" type="text" placeholder="Input" formControlName="search">
+            <input class="uk-input uk-form-width-small" style="position: relative; left: 10px;" type="text" placeholder="Input" formControlName="search">
             <button class="uk-button uk-button-default">Search</button>
             <button class="uk-button uk-button-default" (click)="clearSearch()">Clear</button>
         </div>
@@ -12,4 +12,3 @@
 <div uk-grid>
     <app-article *ngFor="let article of this.articles" (deleteRequest)="deleteArticle($event)" [article]="article"></app-article>
 </div>
-
