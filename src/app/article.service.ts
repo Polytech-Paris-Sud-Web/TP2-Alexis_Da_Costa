@@ -7,8 +7,8 @@ import { map, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ArticleService {
-  // private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
-  private apiUrl = "http://localhost:3000";
+  private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
+  // private apiUrl = "http://localhost:3000";
   private preloadArticles : Article[] | undefined;
 
   constructor(private http : HttpClient) {

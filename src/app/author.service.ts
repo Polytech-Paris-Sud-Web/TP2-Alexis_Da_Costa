@@ -7,8 +7,8 @@ import { Author } from './pages/author/author.component';
   providedIn: 'root'
 })
 export class AuthorService {
-  // private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
-  private apiUrl = "http://localhost:3000";
+  private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
+  // private apiUrl = "http://localhost:3000";
   private preloadAuthors : Author[] | undefined;
 
   constructor(private http : HttpClient) {
