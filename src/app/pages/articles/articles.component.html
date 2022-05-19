@@ -1,9 +1,9 @@
 <div class="uk-margin uk-padding-left">
-    <form [formGroup]="searchForm" (ngSubmit)="filterBySearch()">
+    <form [formGroup]="searchForm" >
         <span class="uk-text-lead" style="position: relative; left: 10px;">{{this.sliced ? "Last 10 articles" : "All articles"}}</span> 
         <div class="uk-margin">
             <input class="uk-input uk-form-width-small" style="position: relative; left: 10px;" type="text" placeholder="Input" formControlName="search">
-            <button class="uk-button uk-button-default" aria-label="Center Align">Search</button>
+            <button class="uk-button uk-button-default" aria-label="Center Align" (click)="filterBySearch()">Search</button>
             <button class="uk-button uk-button-default" (click)="clearSearch()" aria-label="Center Align">Clear</button>
         </div>
     </form>

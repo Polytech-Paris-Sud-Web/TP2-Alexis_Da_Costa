@@ -46,14 +46,16 @@ export class ArticlesComponent implements OnInit {
     const { search } = this.searchForm.value;  
     this.articleService.getPreloadArticles().subscribe((data) => {
       this.articles = data;
-      this.articles = this.articles.filter((article) => {
+      this.articles = this.sliced ? this.articles.filter((article) => {
+        return article.title.toLowerCase().includes(search.toLowerCase());
+      }).slice(0, 10) : this.articles.filter((article) => {
         return article.title.toLowerCase().includes(search.toLowerCase());
       });
     });
   }
 
   clearSearch(): void {
-    this.searchForm.reset();
+    this.searchForm.reset()
     this.articleService.getPreloadArticles().subscribe((data) => {
       this.articles = this.sliced ? data.slice(0, 10) : data;
     });
