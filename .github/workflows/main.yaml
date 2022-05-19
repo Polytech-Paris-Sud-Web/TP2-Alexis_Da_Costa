@@ -6,8 +6,21 @@ on:
       - master
 
 jobs:
+  build :
+    name: 'CI'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install
+        run: npm install
+      - name: build 
+        run: npm build
+      - name: tests
+        run : echo "Tests OK"
+
   deploy:
-    name: 'Deploy'
+    name: 'CD'
     runs-on: ubuntu-latest
 
     steps:
