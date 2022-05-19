@@ -26,7 +26,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articleService.getArticles().subscribe((data) => {
+    this.articleService.getPreloadArticles().subscribe((data) => {
       this.articles = this.sliced ? data.slice(0, 10) : data;
     });
   }
@@ -44,7 +44,7 @@ export class ArticlesComponent implements OnInit {
 
   filterBySearch(): void {
     const { search } = this.searchForm.value;  
-    this.articleService.getArticles().subscribe((data) => {
+    this.articleService.getPreloadArticles().subscribe((data) => {
       this.articles = data;
       this.articles = this.articles.filter((article) => {
         return article.title.toLowerCase().includes(search.toLowerCase());
@@ -54,7 +54,7 @@ export class ArticlesComponent implements OnInit {
 
   clearSearch(): void {
     this.searchForm.reset();
-    this.articleService.getArticles().subscribe((data) => {
+    this.articleService.getPreloadArticles().subscribe((data) => {
       this.articles = this.sliced ? data.slice(0, 10) : data;
     });
   }

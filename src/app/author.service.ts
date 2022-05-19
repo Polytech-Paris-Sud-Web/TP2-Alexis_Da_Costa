@@ -30,6 +30,10 @@ export class AuthorService {
     return this.http.get<Author[]>(this.apiUrl + "/authors");
   }
 
+  public getPreloadAuthors(): Observable<Author[]> {
+    return this.preloadAuthors ? of(this.preloadAuthors) : this.http.get<Author[]>(`${this.apiUrl}/authors`);
+  }
+
   public deleteAuthor(id: number): void {
     fetch(this.apiUrl + "/authors/" + id, { method: 'DELETE' });
   }

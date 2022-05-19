@@ -5,6 +5,7 @@
     <title>SimpleApp</title>
     <base href="/"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Blog PWA">
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css"/>
@@ -12,12 +13,17 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
     <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <meta name="theme-color" content="#1976d2">
 </head>
   <body>
     <style>
       .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
           font-family: 'Poppins', sans-serif !important;
+      }
+      .uk-card-default, .uk-card, .uk-card-body{
+          border-radius: 2pt !important;
+          background-color: rgb(242, 242, 242) !important;
       }
     </style>
     <app-root></app-root>

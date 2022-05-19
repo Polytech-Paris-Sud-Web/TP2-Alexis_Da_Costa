@@ -1,10 +1,10 @@
 <div class="uk-card uk-card-default" style="width: 400px;">
     <div class="uk-card-header">
         <div class="uk-grid-small uk-flex-middle" uk-grid>
-            <button (click)="delete()" class="uk-modal-close-default" type="button" uk-icon="trash"></button>
+            <button (click)="delete()" class="uk-modal-close-default" type="button" aria-label="Center Align" uk-icon="trash"></button>
             <div class="uk-width-expand">
                 <h3 class="uk-card-title uk-margin-remove-bottom">{{this.article?.title}}</h3>
-                <p class="uk-text-meta uk-margin-remove-top">by <a routerLink="/authors/{{this.article?.authors}}">{{this.article?.authors}}</a> - id : {{this.article?.id}} </p>
+                <p class="uk-text-meta uk-margin-remove-top">by <a class="uk-button uk-button-text" routerLink="/authors/{{this.article?.authors}}">{{this.article?.authors}}</a> - id : {{this.article?.id}} </p>
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
         <p>{{this.article?.content?.substring(0, 15)}}...</p>
     </div>
     <div class="uk-card-footer">
-        <a routerLink="/articles/{{this.article?.id}}" class="uk-button uk-button-text">Read more</a>
+        Open this <button routerLink="/articles/{{this.article?.id}}" class="uk-button uk-button-text">article</button>
     </div>
 </div>
 <br>

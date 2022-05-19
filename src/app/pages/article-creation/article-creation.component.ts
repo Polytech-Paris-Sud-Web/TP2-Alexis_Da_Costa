@@ -28,7 +28,9 @@ export class ArticleCreationComponent implements OnInit {
     }
     this.articleService.createArticle(newArticle);
     this.articleService.preload().subscribe();
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 
   ngOnInit(): void {

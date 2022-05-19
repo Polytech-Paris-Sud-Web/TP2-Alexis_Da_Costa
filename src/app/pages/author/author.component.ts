@@ -13,7 +13,7 @@ export class AuthorComponent implements OnInit {
   constructor(private route: ActivatedRoute, private authorService: AuthorService, private router: Router) { 
     this.author = undefined;
     route.params.subscribe((params) => {
-      this.authorService.getAuthors().subscribe((data) => {
+      this.authorService.getPreloadAuthors().subscribe((data) => {
         let authorFind = data.find((author) => author.name == params["name"]);
         if(!authorFind){
           this.author = {

@@ -15,7 +15,7 @@ export class AuthorsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.authorService.getAuthors().subscribe((data) => {
+    this.authorService.getPreloadAuthors().subscribe((data) => {
       this.authors = data;
     })
     console.table(this.authors);

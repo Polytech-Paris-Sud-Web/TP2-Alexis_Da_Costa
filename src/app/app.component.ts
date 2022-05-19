@@ -15,7 +15,13 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.articleService.preload().subscribe();
-    this.authorService.preload().subscribe();
+    this.articleService.preload().subscribe((data) => {
+      console.log("Articles preloaded");
+      console.table(data);
+    });
+    this.authorService.preload().subscribe((data) => {
+      console.log("Authors preloaded");
+      console.table(data);
+    });
   }
 }

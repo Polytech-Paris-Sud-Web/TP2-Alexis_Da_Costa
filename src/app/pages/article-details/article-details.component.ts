@@ -21,7 +21,7 @@ export class ArticleDetailsComponent implements OnInit {
       //   this.router.navigate(["/"]);
       // });
 
-      this.articleService.getArticles().subscribe((data) => {
+      this.articleService.getPreloadArticles().subscribe((data) => {
         let articleFound = data.find((article) => article.id == params["id"]);
         if(!articleFound){
           alert("Article not found");
