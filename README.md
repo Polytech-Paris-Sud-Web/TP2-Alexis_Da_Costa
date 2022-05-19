@@ -1,5 +1,8 @@
 # SimpleApp
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fb004a94-150f-4957-b77d-2f9b6d0ff44e/deploy-status)](https://app.netlify.com/sites/playful-shortbread-f88895/deploys)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 ## Development server

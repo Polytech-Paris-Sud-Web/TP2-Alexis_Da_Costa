@@ -25,7 +25,7 @@ jobs:
       - name: install
         run: npm install
       - name: build 
-        run: npm build
+        run: npm run build
       - name: tests
         run : echo "Tests OK"
   deploy:
