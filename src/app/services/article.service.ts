@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Article } from '../models/article.model';
+import { Article, ArticleCreation } from '../models/article.model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,13 +39,8 @@ export class ArticleService {
     fetch(this.apiUrl + "/articles/" + id, { method: 'DELETE' });
   }
 
-  public createArticle(article: Omit<Article, "id">): void {
-    this.http.post<Article>(this.apiUrl + "/articles", article).subscribe(
-      (data) => {
-        console.log(data);
-      }
-    );
-    console.log("Posted article: " + article);
+  public createArticle(article: ArticleCreation): void {
+    this.http.post<Article>(this.apiUrl + "/articles", article).subscribe();
   }
 
   public getArticle(id: number): Observable<Article> {

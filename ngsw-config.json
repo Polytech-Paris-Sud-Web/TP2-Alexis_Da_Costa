@@ -35,7 +35,7 @@
       "name": "api",
       "urls": [
         "http://localhost:3000/**",
-        "https://json-server-simple-app.herokuapp.com/**"
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa/**"
       ],
       "cacheConfig": {
         "strategy": "freshness",

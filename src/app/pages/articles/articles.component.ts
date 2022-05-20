@@ -32,7 +32,6 @@ export class ArticlesComponent implements OnInit {
 
   deleteArticle(article: Article): void {
     let toDelete : boolean = confirm("Are you sure you want to delete this article?");
-    console.log(article);
     if(toDelete){
       this.articleService.deleteArticle(article.id);
       this.articleService.getArticles().subscribe((data) => {

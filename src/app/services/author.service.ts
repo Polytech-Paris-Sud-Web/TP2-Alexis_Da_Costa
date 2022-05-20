@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Author } from '../models/author.model';
+import { Author, AuthorCreation } from '../models/author.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,13 +38,8 @@ export class AuthorService {
     fetch(this.apiUrl + "/authors/" + id, { method: 'DELETE' });
   }
 
-  public createAuthor(author: Omit<Author, "id">): void {
-    this.http.post<Author>(this.apiUrl + "/authors", author).subscribe(
-      (data) => {
-        console.log(data);
-      }
-    );
-    console.log("Posted author: " + author);
+  public createAuthor(author: AuthorCreation): void {
+    this.http.post<Author>(this.apiUrl + "/authors", author).subscribe();
   }
 
   public getAuthor(id: number): Observable<Author> {
