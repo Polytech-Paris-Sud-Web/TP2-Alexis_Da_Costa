@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthorService } from '../../author.service';
+import { Author } from 'src/app/models/author.model';
+import { AuthorService } from '../../services/author.service';
 
 @Component({
   selector: 'app-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.css']
+  templateUrl: './author.component.html'
 })
 export class AuthorComponent implements OnInit {
 
@@ -36,10 +36,4 @@ export class AuthorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
-
-export type Author = {
-  id: number,
-  name: string;
-  bio?: string;
 }

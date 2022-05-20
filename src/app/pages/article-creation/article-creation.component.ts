@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ArticleService } from '../../article.service';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-creation',
-  templateUrl: './article-creation.component.html',
-  styleUrls: ['./article-creation.component.css']
+  templateUrl: './article-creation.component.html'
 })
 export class ArticleCreationComponent implements OnInit {
   articleForm : FormGroup;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ArticleService } from './article.service';
+import { ArticleService } from './services/article.service';
 import { ArticleComponent } from './pages/article/article.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { ArticleDetailsComponent } from './pages/article-details/article-details
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthorsComponent } from './pages/authors/authors.component';
-import { AuthorService } from './author.service';
+import { AuthorService } from './services/author.service';
 
 const appRoutes: Routes = [
   { 
@@ -64,8 +64,6 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],

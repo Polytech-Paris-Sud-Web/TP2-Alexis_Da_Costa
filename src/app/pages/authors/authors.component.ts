@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorService } from '../../author.service';
-import { Author } from '../author/author.component';
+import { Author } from 'src/app/models/author.model';
+import { AuthorService } from '../../services/author.service';
 
 @Component({
   selector: 'app-authors',
-  templateUrl: './authors.component.html',
-  styleUrls: ['./authors.component.css']
+  templateUrl: './authors.component.html'
 })
 export class AuthorsComponent implements OnInit {
   authors : Author[] | null;

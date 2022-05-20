@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArticleService } from '../../article.service';
+import { Article } from 'src/app/models/article.model';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article',
@@ -20,24 +21,10 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.route.params.subscribe((params) => {
-    //   if (params["id"] !== undefined){
-    //     this.articleService.getArticle(params["id"]).subscribe((data) => {
-    //       this.article = data;
-    //     });
-    //   }
-    // });
   }
 
   delete() {
       this.deleteRequest.emit(this.article);
   }
 
-}
-
-export interface Article {
-  id: number,
-  title: string;
-  content: string;
-  authors: string;
 }

@@ -2,13 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ArticleService } from '../../article.service';
-import { Article } from '../article/article.component';
+import { Article } from 'src/app/models/article.model';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  templateUrl: './articles.component.html'
 })
 export class ArticlesComponent implements OnInit {
   sliced : boolean = false;

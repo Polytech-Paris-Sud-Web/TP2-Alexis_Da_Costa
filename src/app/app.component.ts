@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ArticleService } from './article.service';
-import { AuthorService } from './author.service';
+import { ArticleService } from './services/article.service';
+import { AuthorService } from './services/author.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'simple-app';
