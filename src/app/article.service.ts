@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ArticleService {
   private apiUrl = environment.apiurl;
-  private preloadArticles : Article[] | undefined;
+  public preloadArticles : Article[] | undefined;
 
   constructor(private http : HttpClient) {
   } 

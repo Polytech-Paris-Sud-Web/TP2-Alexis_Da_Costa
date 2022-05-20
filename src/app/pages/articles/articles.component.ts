@@ -39,6 +39,7 @@ export class ArticlesComponent implements OnInit {
       this.articleService.getArticles().subscribe((data) => {
         this.articles = this.sliced ? data.slice(0, 10) : data;
       });
+      window.location.reload();
     }
   }
 

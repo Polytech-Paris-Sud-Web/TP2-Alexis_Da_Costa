@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { map, Observable, of } from 'rxjs';
 import { Author } from './pages/author/author.component';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorService {
-  private apiUrl = "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-Alexis_Da_Costa";
-  // private apiUrl = "http://localhost:3000";
+  private apiUrl = environment.apiurl;
   private preloadAuthors : Author[] | undefined;
 
   constructor(private http : HttpClient) {
